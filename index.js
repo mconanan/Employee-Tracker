@@ -29,7 +29,7 @@ const start = [
       "add a department",
       "add a role",
       "add an employee",
-      "update an employee role",
+      
     ],
     name: "action",
   },
@@ -193,7 +193,7 @@ const getAllManagers = () => {
         console.table(results);
 
         managerChoices = results.map((manager) => {
-          console.log("manager ID", manager);
+    
           return { name: manager.first_name, value: manager.id };
         });
 
@@ -278,8 +278,6 @@ const addEmployee = () => {
             '${addEmployeeAnswers.employee_role}',
             '${answers.manager}',`,
             ];
-
-            console.log('addemployeeanswers', addEmployeeAnswers)
 
             const employeeSql = `INSERT INTO all_employees (first_name, last_name, role_id, manager_id) VALUES("${addEmployeeAnswers.first_name}","${addEmployeeAnswers.last_name}", "${addEmployeeAnswers.employee_role}", "${answers.manager}");`;
 
